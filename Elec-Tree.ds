@@ -1,0 +1,3656 @@
+/*
+ * Author       : zohopractise
+ * Generated on : 20-Apr-2025 09:26:47
+ * Version      : 1.0
+ */
+ application "Elec-Tree"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "Asia/Kolkata"
+ 	time format = "24-hr"
+ 	forms
+	{
+		form Business_Partner
+		{
+			success message = "Data Added Successfully!"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Full_Name
+			(
+    			type = text
+				displayname = "Full Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Company
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Category
+		{
+			success message = "Category Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Category_name
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Category_ID
+			(
+    			type = autonumber
+				start index = 200
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Customer
+		{
+			success message = "Customer Added Successfully"
+			feature property = 320
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div style=\"text-align: justify\"><span class=\"size\" style=\"font-size: 18.6667px\"><span class=\"font\" style=\"font-family: serif, sans-serif\"><span class=\"highlight\" style=\"background-color: rgb(255, 255, 255)\"><span class=\"colour\" style=\"color: rgb(0, 0, 0)\">&quot;Looking to buy in bulk? </span></span></span></span><b><span class=\"size\" style=\"font-size: 18.6667px\"><span class=\"highlight\" style=\"background-color: rgb(255, 255, 255)\"><span class=\"colour\" style=\"color: rgb(0, 153, 0)\"><span class=\"font\" style=\"font-family: ArchivoBlack, sans-serif\">Elec-Tree</span></span><span class=\"font\" style=\"font-family: serif, sans-serif\"><span class=\"colour\" style=\"color: rgb(0, 0, 0)\"> </span></span></span></span></b><span class=\"size\" style=\"font-size: 18.6667px\"><span class=\"font\" style=\"font-family: serif, sans-serif\"><span class=\"highlight\" style=\"background-color: rgb(255, 255, 255)\"><span class=\"colour\" style=\"color: rgb(0, 0, 0)\">offers special deals and discounts for bulk purchases, ensuring quality products at unbeatable prices. Simplify your procurement process with our seamless ordering syste​m and dedicated customer support!&quot;</span></span></span></span><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			plain2
+			(
+    			type = plaintext
+				value = "<div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh\"><img src=\"https://static.vecteezy.com/system/resources/thumbnails/040/867/325/small/technology-logo-design-illustration-vector.jpg\" alt=\"Technology Logo\" style=\"max-width: 334px\"> <div style=\"font-size: 48px; text-align: center\"><span class=\"colour\" style=\"color: rgb(0, 101, 204)\"><span class=\"font\" style=\"font-family: ArchivoBlack, sans-serif\">ELEC </span> </span> <span class=\"colour\" style=\"color: rgb(0, 0, 204)\"> - </span> <span class=\"colour\" style=\"color: rgb(0, 153, 0)\"> <span class=\"font\" style=\"font-family: Rubik, sans-serif\"> TREE </span> </span> <br /></div></div><div><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Customer_ID
+			(
+    			type = autonumber
+				start index = 500
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Customer_Image
+			(
+    			type = image
+				source  = file
+				aspect ratio = original
+				camera = primary
+				show gallery = true
+				switch camera = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Customer_Name
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Sex
+			(
+				type = radiobuttons
+				maxchar = 100
+				values = {"Male","Female","Others"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Order
+			(
+				type = grid
+				values  = Order.ID
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Final_Cost
+			(
+				type = INR
+				format = commadotindian
+				initial value = 0
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			must have Pay_Options
+			(
+				type = picklist
+				displayname = "Pay Options"
+				maxchar = 100
+				values = {"UPI","Cash","Online"}
+				initial value = "Cash"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			UPI2
+			(
+				type = section
+				displayname = "UPI"
+				visibility = true
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			UPI_ID2
+			(
+    			type = text
+				displayname = "UPI_ID"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Phone_No2
+			(
+				type = number
+				displayname = "Phone_No"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Online2
+			(
+				type = section
+				displayname = "Online"
+				visibility = true
+	 			row = 5
+	 			column = 0   
+				width = medium
+			)
+			Acct_Holder_Name2
+			(
+    			type = text
+				displayname = "Acct_Holder_Name"
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Acct_NO2
+			(
+    			type = text
+				displayname = "Acct_NO"
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Delivery_section
+			(
+				type = section
+	 			row = 6
+	 			column = 0   
+				width = medium
+			)
+			Delivery_Date
+			(
+    			type = date
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Delivery_Time
+			(
+    			type = time
+				initial value = "08:00:00"	
+				timedisplayoptions = "hh:mm" 
+				allowedhours = 08:00-20:00
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Verification
+			(
+				type = picklist
+				displayname = "Delivery_Status"
+				maxchar = 100
+				values = {"Deliveried","Not Deliveried"}
+				initial value = "Not Deliveried"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Membership_Card_Code
+			(
+    			type = text
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			plain1
+			(
+    			type = plaintext
+				value = "<div style=\"text-align: justify\"><b><span class=\"font\" style=\"font-family: ArchivoBlack, sans-serif\"><span class=\"size\" style=\"font-size: 16px\">Dedicated Customer Care:</span></span></b><span class=\"font\" style=\"font-family: ArchivoBlack, sans-serif\"><span class=\"size\" style=\"font-size: 16px\"> </span></span><span class=\"font\" style=\"font-family: serif, sans-serif\"><span class=\"size\" style=\"font-size: 16px\">Our friendly team is always ready to assist you with inquiries, orders, and post-purchase support. Reach out to us anytime at +91 91xxx xxx86 (or) electree@gamil.com&nbsp;</span></span><br /></div>"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					Place_Order
+					(
+   						type = submit
+   						displayname = "Place Order"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+			blueprint components
+			{
+				stages = {"Amount1","Amount2","Amount3"}
+			}
+		}
+		form Fetch_Partners
+		{
+			success message = "Data Added Successfully!"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Current_Partners
+			(
+				type = picklist
+				displayname = "Current Partners Leads"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Partner_Details
+			(
+    			type = textarea
+				displayname = "Partner Details"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Sentiment
+			(
+				type = picklist
+				maxchar = 100
+	 			row = 1
+	 			column = 1   
+				width = medium
+						AI_Properties
+						(
+									fieldtype = SentimentAnalysis
+									basefield = Partner_Details
+						)
+			)
+			Keyword
+			(
+    			type = textarea
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+						AI_Properties
+						(
+									fieldtype = KeywordExtractor
+									basefield = Partner_Details
+						)
+			)
+			Contacts
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Contact_Details
+			(
+    			type = textarea
+				displayname = "Contact Details"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Accounts
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Account_Details
+			(
+    			type = textarea
+				displayname = "Account Details"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Inventory
+		{
+			success message = "Inventory Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Category_Name
+			(
+				type = picklist	
+				values  = Category.ID
+    			displayformat = [Category_name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			SubCategory_Name
+			(
+				type = picklist	
+				values  = SubCategory[Category.Category_name == input.Category_Name.Category_name].ID
+    			displayformat = [Sub_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			ItemName
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Image
+			(
+    			type = image
+				source  = file
+				aspect ratio = original
+				camera = primary
+				show gallery = true
+				switch camera = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Stocks
+			(
+				type = number
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			ItemPrice
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Remarks
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><b>Exclusively Available at Elec-Tree</b><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form InventoryFeed
+		{
+			store data in zc = false
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Feedback_Id
+			(
+				type = number
+				maxchar = 19
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Feedback
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				Submit
+				(
+   					type = submit
+   					displayname = "Submit"
+				)
+				Reset
+				(
+   					type = reset
+   					displayname = "Reset"
+				)
+			}
+		}
+		form Order
+		{
+			success message = "Order Added Successfully"
+			feature property = 384
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><span class=\"size\" style=\"font-size: 16px\">&quot;Welcome to </span><b><span class=\"colour\" style=\"color: rgb(0, 153, 0)\"><span class=\"size\" style=\"font-size: 18.6667px\">Elec-Tree!</span></span></b><span class=\"size\" style=\"font-size: 16px\"><span class=\"colour\" style=\"color: rgb(0, 153, 0)\"> </span>Your one-stop solution for all electrical needs—offering a wide range of high-quality products, expert advice, and exceptional customer service. Shop smarter, live brighter!&quot;</span><span class=\"highlight\" style=\"background-color: rgb(153, 204, 255)\">​</span><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			plain1
+			(
+    			type = plaintext
+				value = "<div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh\"><img src=\"https://static.vecteezy.com/system/resources/thumbnails/040/867/325/small/technology-logo-design-illustration-vector.jpg\" alt=\"Technology Logo\" style=\"max-width: 334px\"> <div style=\"font-size: 48px; text-align: center\"><span class=\"colour\" style=\"color: rgb(0, 101, 204)\"><span class=\"font\" style=\"font-family: ArchivoBlack, sans-serif\">ELEC </span> </span> <span class=\"colour\" style=\"color: rgb(0, 0, 204)\"> - </span> <span class=\"colour\" style=\"color: rgb(0, 153, 0)\"> <span class=\"font\" style=\"font-family: Rubik, sans-serif\"> TREE </span> </span> <br /></div></div><div><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 500
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			OrderID
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Category
+			(
+				type = picklist	
+				values  = Category.ID
+    			displayformat = [Category_name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			SubCategory
+			(
+				type = picklist	
+				values  = SubCategory[Category.Category_name == input.Category.Category_name].ID
+    			displayformat = [Sub_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Inventory
+			(
+				type = picklist	
+				values  = Inventory[Category_Name.Category_name == input.Category.Category_name && SubCategory_Name.Sub_Name == input.SubCategory.Sub_Name].ID
+    			displayformat = [ItemName]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Price
+			(
+				type = INR
+				format = commadotindian
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			QTY
+			(
+				type = number
+				maxchar = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Total
+			(
+				type = number
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Pay_mode
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Cash","UPI","Card","Pending"}
+				initial value = "Pending"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Online
+			(
+				type = section
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Account_Number
+			(
+    			type = text
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Account_Holder_Name
+			(
+    			type = text
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			UPI
+			(
+				type = section
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			UPI_ID
+			(
+    			type = text
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Phone_no
+			(
+				type = number
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					Buy
+					(
+   						type = submit
+   						displayname = "Buy"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		properties
+		{
+			total entries
+			{
+				allowed count = 30
+			}
+		}
+		}
+		form SubCategory
+		{
+			success message = "Subcategory Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Category
+			(
+				type = picklist	
+				values  = Category.ID
+    			displayformat = [Category_name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Sub_Name
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Categories
+		{
+			displayName = "All Categories"
+			show all rows from Category    
+			(
+				Category_name
+				Category_ID
+			)
+		}
+		default list All_Subcategories
+		{
+			displayName = "All Subcategories"
+			show all rows from SubCategory    
+			(
+				Category
+				Sub_Name
+			)
+		}
+		default list All_Inventories
+		{
+			displayName = "All Inventories"
+			show all rows from Inventory    
+			(
+				Category_Name
+				SubCategory_Name
+				ItemName
+				ItemPrice
+				Remarks
+				custom action "Update_feedback"
+				(
+	  			workflow = updateworkflow
+				show action in edit record menu = true
+				column header = "Update_feedback"
+				)
+				Image
+				(
+			dimension = actualsize
+				)
+				Stocks
+			)
+			filters
+			(
+				SubCategory_Name
+				Category_Name
+			)
+			conditional formatting
+			(
+				"New Formatting"
+				{
+				fields = [Category_Name]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+				"New Formatting"
+				{
+				fields = [SubCategory_Name]
+				format = "color:#e64d3b;"
+				}
+				"New Formatting"
+				{
+				fields = [ItemPrice]
+				format = "color:#ffffff;background-color:#107c91;"
+				}
+				"New Formatting"
+				{
+				fields = [Image]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting"
+				{
+				fields = [Remarks]
+				format = "color:#19bc9f;"
+				}
+			)
+		}
+		default list All_Orders
+		{
+			displayName = "All Orders"
+			show all rows from Order    
+			(
+				Category
+				SubCategory
+				Inventory
+				QTY
+				Total
+				Price
+				Pay_mode
+				custom action "Update"
+				(
+	  			workflow = Updatepayment
+				show action in edit record menu = true
+				column header = "Update"
+				)
+				Account_Number
+				Account_Holder_Name
+				UPI_ID
+				Phone_no
+				Auto_Number as "Auto Number"
+				OrderID
+			)
+			filters
+			(
+				Category
+				Pay_mode
+			)
+		}
+		default list All_Customers
+		{
+			displayName = "All Customers"
+			show all rows from Customer    
+			(
+				Customer_Name
+				Final_Cost
+				Verification as "Delivery_Status"
+				Customer_ID
+				Delivery_Date
+				Delivery_Time
+				Sex
+			)
+		}
+		custom VR_Customers
+		{
+			displayName = "VR_Customers"
+			show all rows from Customer    
+			(
+				Customer_Name
+				Final_Cost
+				Customer_Image
+				Customer_ID
+				Sex
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+			)
+		}
+		default list Business_Partner_Report
+		{
+			displayName = "Business_Partner Report"
+			show all rows from Business_Partner    
+			(
+				Full_Name as "Full Name"
+				Email
+				Company
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+			)
+		}
+		default list Fetch_Partners_Report
+		{
+			displayName = "Fetch_Partners Report"
+			show all rows from Fetch_Partners    
+			(
+				Current_Partners as "Current Partners Leads"
+				Partner_Details as "Partner Details"
+				Sentiment
+				Keyword
+				Contacts
+				Contact_Details as "Contact Details"
+				Accounts
+				Account_Details as "Account Details"
+			)
+		}
+		custom Inventories_View
+		{
+			displayName = "Inventories_View"
+			show all rows from Inventory    
+			(
+				Category_Name
+				SubCategory_Name
+				ItemName
+				ItemPrice
+				Remarks
+				custom action "Update_feedback"
+				(
+	  			workflow = updateworkflow
+				show action in edit record menu = true
+				column header = "Update_feedback"
+				)
+				Image
+			)
+			customlayouts
+			(
+				template
+	 			(
+	 	  			displayname="Custom Layout 1"
+	 	  			content="<panel  \n >\n	<pr \n			width='fill'\n		height='fill'\n>\n	<pc \n		padding = '0px'\n	bgColor = '#FFFFFF'\n\n		width = '100%'\n		hAlign = 'center'\n		vAlign = 'middle'\n>\n	<pr \n			width='fill'\n		height='fill'\n>\n	<pc \n		paddingTop = '17px'\n	paddingLeft = '17px'\n	paddingRight = '0px'\n	paddingBottom = '17px'\n	bgColor = '#000000'\n\n		width = '49%'\n		hAlign = 'center'\n		vAlign = 'middle'\n>\n	<pr \n			width='auto'\n		height='auto'\n>\n	<pc \n	\n>\n	<pr \n	>\n	<pc \n	\n>\n	<image  \n		marginLeft = '0px'\n	marginRight = '50px' \n	marginBottom = '0px'\n	marginTop = '0px'\n\n	color = '#FFFFFF'\n	bgColor = '#FFFFFF'\n	width = '80px'\n	height = '80px'\n	type = 'field'\n	value = 'Image'\n	cornerRadius = '40px'\n/>\n</pc>\n</pr><pr \n	>\n	<pc \n	\n>\n	<text \n\n	marginLeft = '0px'\n	marginRight = '50px' \n	marginBottom = '0px'\n	marginTop = '5px'\n	color = '#FFFFFF'\n	size = '16px'\n	uppercase = 'false' \n	underline = 'false' \n	bold = 'false' \n	italic = 'true' \n	type = 'field'\n\n\n\n	  \n      	lineHeight = '22'\n      	  numOfLines = '1'\n	  value = 'ItemPrice'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc><pc \n		padding = '0px'\n\n		width = '51%'\n		hAlign = 'center'\n>\n	<pr \n			width='fill'\n		height='fill'\n>\n	<pc \n		padding = '17px'\n	bgColor = '#000000'\n\n		width = '100%'\n		hAlign = 'left'\n		vAlign = 'middle'\n>\n	<pr \n			width='auto'\n		height='auto'\n>\n	<pc \n	\n>\n	<text \n\n	marginLeft = '0px'\n	marginRight = '0px' \n	marginBottom = '0px'\n	marginTop = '0px'\n	color = '#FFFFFF'\n	size = '20px'\n	uppercase = 'false' \n	underline = 'false' \n	bold = 'true' \n	italic = 'false' \n	type = 'field'\n	bgColor = '#000000'\n\n\n\n	  \n      	lineHeight = '28'\n      	  numOfLines = '1'\n	  value = 'ItemName'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr><pr \n			width='fill'\n		height='fill'\n>\n	<pc \n		padding = '17px'\n\n		width = '100%'\n>\n	<pr \n			width='auto'\n		height='auto'\n>\n	<pc \n	\n>\n	<pr \n	>\n	<pc \n	\n>\n	<text \n\n	marginLeft = '0px'\n	marginRight = '0px' \n	marginBottom = '10px'\n	marginTop = '0px'\n	color = '#000000'\n	size = '16px'\n	uppercase = 'false' \n	underline = 'false' \n	bold = 'false' \n	italic = 'false' \n	type = 'field'\n\n\n\n	  \n      	lineHeight = '22'\n      	  numOfLines = '1'\n	  value = 'None'\n>\n</text>\n\n</pc>\n</pr><pr \n	>\n	<pc \n	\n>\n	<text \n\n	marginLeft = '0px'\n	marginRight = '0px' \n	marginBottom = '0px'\n	marginTop = '0px'\n	color = '#000000'\n	size = '16px'\n	uppercase = 'false' \n	underline = 'false' \n	bold = 'false' \n	italic = 'false' \n	type = 'field'\n\n\n\n	  \n      	lineHeight = '22'\n      	  numOfLines = '1'\n	  value = 'Remarks'\n>\n</text>\n\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</pc>\n</pr>\n</panel>"
+	    		)
+			)
+		}
+		list stocksAnalysis
+		{
+			displayName = "stocksAnalysis"
+			show all rows from Inventory    
+			(
+				Category_Name
+				SubCategory_Name
+				ItemName
+				Image
+				Stocks
+				ItemPrice
+				Remarks
+			)
+			conditional formatting
+			(
+				"New Formatting"
+				{
+				fields = [ItemName]
+				format = "color:#ffffff;background-color:#e84c3d;"
+				}
+				"New Formatting"
+				{
+				fields = [Stocks]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+			)
+		}
+		custom Visual_Orders
+		{
+			displayName = "Visual_Orders"
+			show all rows from Order    
+			(
+				Category
+				SubCategory
+				Inventory
+				QTY
+				Total
+				Price
+				Pay_mode
+				Account_Number
+				Account_Holder_Name
+				UPI_ID
+				Phone_no
+				Auto_Number as "Auto Number"
+				OrderID
+				Inventory.Image
+			)
+			filters
+			(
+				Category
+				Pay_mode
+			)
+			custom actions
+			(
+				"Update"
+				(
+	  			workflow = Updatepayment
+				show action in edit record menu = true
+				)
+			)
+			conditional formatting
+			(
+				"New Formatting"
+				{
+				fields = [Inventory.Image]
+				format = "color:#ffffff;background-color:#765f89;"
+				}
+				"New Formatting"
+				{
+				fields = [OrderID]
+				format = "color:#e64d3b;"
+				}
+			)
+		}
+	}
+	pages
+	{
+		page Dashboard
+		{
+			displayname = "Dashboard"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpadding = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\tpadding = '5px'\n\n>\n\t<pr \n\t>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginLeft = '0px'\n\tmarginRight = '5px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF0048'\n\tsize = '36px'\n\tbold = 'true' \n\ttype = 'Form Data'\n\n\tdisplayType = 'actual'\n\tdecimalPlaces = '2'\n\tthousandsSeperator = 'COMMA'\n\tdecimalSeperator = 'DOT'\n\tnumberScale = 'none'\n\n\n\t  \n\t  value = 'thisapp.Customer.Final_Cost.sum'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<image  \n\t\n\tcolor = '#FFFFFF'\n\tbgColor = '#FF0048'\n\twidth = '40px'\n\theight = '40px'\n\ttype = 'icon'\n\tvalue = 'users-2-a-star'\n\tsize = '22px'\n\tcornerRadius = '20px'\n\ticonType = 'solid'\n\/>\n<\/pc>\n<\/pr><pr \n\t>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'Customer'\n\t\ttarget = 'new-window'\n\n\tmarginLeft = '0px'\n\tmarginRight = '0px' \n\tmarginBottom = '0px'\n\tmarginTop = '5px'\n\tcolor = '#333333'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Total Sales'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<chart \n\telementName=\"Chart\"\n\n\ttype = 'Column'\n\txtitle = 'Customer'\n\tytitle = 'FInal Cost'\n\tbgColor = '#FFFFFF'\n\ttheme = 'theme1'\n\tlegendPos = 'center.top'\n\tappLinkName = 'thisapp'\n\tformLinkName = 'Customer'\n\txfield = 'Customer_Name'\n\tyfields = 'value:Final_Cost'\n\/>\n\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Dashboard2
+		{
+			displayname = "Dashboard2"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<search \n\telementName=\"Search\"\n\tpaddingTop = '40px'\n\tpaddingLeft = '80px'\n\tpaddingRight = '80px'\n\tpaddingBottom = '40px'\n\tbgtype = 'none'\n\tbgColor = '#FFFFFF'\n\n\tshape = 'rounded'\n\tresultComponent = 'report'\n\tlinkName = 'All_Customers'\n\ttarget = 'new-window'\n\tcriteriaString = 'Final_Cost &gt; input.searchString'\n\tfontFamily = 'default'\n\tappLinkName = 'thisapp'\n\tstyle = '2'\n\tplaceholder = 'Get reports of Total Cost greater than the Entered Value'\n\n>\n<searchbar color=\"#000000\" bgColor=\"#ffffff\" fontSize=\"15px\"\n\/><searchbutton color=\"#ffffff\" bgColor=\"#0abb51\" \nfontSize=\"15px\"  \/><\/search>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<report \n\telementName=\"Report\"\n\n\t\tappLinkName = 'thisapp'\n\t\tlinkName = 'All_Customers'\n\t\n\t\tiszreport = 'false'\n\theightType = 'auto'\n\theightValue = '700'\n\n\/>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<chart \n\telementName=\"Chart\"\n\n\ttype = 'Bar'\n\txtitle = 'Item'\n\tytitle = 'Quantity'\n\tbgColor = '#FFFFFF'\n\ttheme = 'theme1'\n\tlegendPos = 'center.top'\n\tappLinkName = 'thisapp'\n\tformLinkName = 'Order'\n\txfield = 'Inventory.ItemName'\n\tyfields = 'count:QTY'\n\/>\n\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+	}
+
+
+		 functions
+		 {
+			 Deluge
+			 {
+				 string GenerateID(string variables, int autonumber)
+                 {
+                 	return variables + "ElTR" + autonumber;
+                 }
+				 list removeAddedItem(list removeDupe)
+                 {
+                 	fetchingData = Inventory[ID != null].ID.getAll();
+                 	return fetchingData;
+                 }
+			 }
+		 }
+		workflow
+		{
+		form
+		{
+			Third as "Third"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				on user input of Inventory
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Total = input.Price * input.QTY;
+						)
+					}
+					actions 
+					{
+						custom deluge script
+						(
+											input.Price = input.Inventory.ItemPrice;
+						)
+					}
+				}
+
+			}
+			calculateCost as "calculateCost"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				on user input of QTY
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Total = input.QTY * input.Price;
+						)
+					}
+				}
+
+			}
+			FetchPrice as "FetchPrice"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				on user input of Order.Inventory
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											row.Price=row.Inventory.ItemPrice;
+						)
+					}
+				}
+
+			}
+			PriceTotal as "PriceTotal"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				on user input of Order.QTY
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											row.Total=row.Price * row.QTY;
+										input.Final_Cost = input.Final_Cost + row.Total;
+						)
+					}
+				}
+
+			}
+			totalworkflow as "totalworkflow"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				on user input of Order.Total
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Final_Cost = input.Final_Cost + row.Total;
+						)
+					}
+				}
+
+			}
+			update_total as "update total"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				on delete row of Order
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Final_Cost = input.Final_Cost - row.Total;
+						)
+					}
+				}
+
+			}
+			updatefeedback as "updatefeedback"
+			{
+				type =  form
+				form = InventoryFeed
+				button = Submit
+				on click
+				{
+					actions 
+					{
+					on click
+					(
+						fetchingData = Inventory[ID == input.Feedback_Id];
+										fetchingData.Remarks=input.Feedback;
+										openUrl("#Script:page.parent.refresh","parent window");
+					)
+					}
+				}
+			}
+			Verification_workflow as "Verification_workflow"
+			{
+				type =  form
+				form = Customer
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide Verification;
+						)
+					}
+				}
+
+			}
+			Orderfieldrule as "Orderfieldrule"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				field rules
+				{
+					actions  (Pay_mode == "UPI")
+					{
+						show UPI;
+						hide Online;
+					}
+					actions  (Pay_mode == "Card")
+					{
+						show Online;
+						hide UPI;
+					}
+					actions  (Pay_mode == "Cash")
+					{
+						hide Online,UPI;
+					}
+					actions  (Pay_mode == "Pending")
+					{
+						hide Online,UPI;
+					}
+				}
+
+			}
+			workflow_function as "workflow_function"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.OrderID = thisapp.GenerateID(input.OrderID,input.Auto_Number);
+						)
+					}
+				}
+
+			}
+			disableid as "disableid"
+			{
+				type =  form
+				form = Order
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											disable OrderID;
+						)
+					}
+				}
+
+			}
+			Send_Email_Form_Propertie as "Send Email - Form Properties"
+			{
+				type =  presuccess
+				form = Customer
+				on start
+				{
+					actions 
+					{
+						sendmail
+						(
+							from : "zoho.adminuserid"
+							to : "zoho.adminuserid"
+							subject : "Elec-Tree : New entry added"
+							message : "<div>Hello,<br><br>A new entry added in 'Customer' form of Elec-Tree application.<br></div><br><br>"
+						)
+					}
+				}
+			}
+			disableID_subform as "disableID_subform"
+			{
+				type =  form
+				form = Customer
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											disable Order.OrderID;
+						)
+					}
+					actions 
+					{
+						custom deluge script
+						(
+											hide Order.Phone_no;
+										hide Order.Account_Number;
+										hide Order.Account_Holder_Name;
+										hide Order.UPI_ID;
+										hide Order.Pay_mode;
+						)
+					}
+				}
+
+			}
+			pay_options_rule as "pay_options_rule"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				field rules
+				{
+					actions  (Pay_Options == "UPI")
+					{
+						hide Online2;
+						show UPI2;
+					}
+					actions  (Pay_Options == "Online")
+					{
+						hide UPI2;
+						show Online2;
+					}
+					actions  (Pay_Options == "Cash")
+					{
+						hide Online2,UPI2;
+					}
+				}
+
+			}
+			hide_membershipcode as "hide_membershipcode"
+			{
+				type =  form
+				form = Customer
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide Membership_Card_Code;
+						)
+					}
+				}
+
+			}
+			membership as "membership"
+			{
+				type =  form
+				form = Customer
+				record event = on add or edit
+
+				on user input of Membership_Card_Code
+				{
+				}
+
+			}
+			zohoCRM_insert as "zohoCRM_insert"
+			{
+				type =  form
+				form = Business_Partner
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											param = {"Last_Name":input.Full_Name,"Company":input.Company,"Email":input.Email,"Phone":input.Phone_Number};
+										myList = List();
+										myList.add(param);
+										myMap = Map();
+										myMap.put("data",myList);
+										x = invokeurl
+										[
+											url :"https://zohoapis.in/crm/v6/Leads"
+											type :POST
+											parameters:myMap.tostring()
+											connection:"zohocrm_connection"
+										];
+						)
+					}
+				}
+
+			}
+			Fetch_partners as "Fetch_partners"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getLeads = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Leads?fields=id,Last_Name,Email,Phone"
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										leadlist = List();
+										for each  data in getLeads.get("data")
+										{
+											leadlist.add(data.get("Email"));
+										}
+										input.Current_Partners:ui.add(leadlist);
+						)
+					}
+				}
+
+			}
+			Partner_details as "Partner_details"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on user input of Current_Partners
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getLead_Detail = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Leads/search?email=" + input.Current_Partners
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										data = getLead_Detail.get("data");
+										info data;
+										input.Partner_Details = data.get(0).get("Owner").get("name") + " " + data.get(0).get("Annual_Revenue") + " " + data.get(0).get("Phone") + " " + data.get(0).get("Industry");
+						)
+					}
+				}
+
+			}
+			Fetch_Contacts as "Fetch_Contacts"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getContacts = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Contacts?fields=id,Last_Name,Email,Phone"
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										contactlist = List();
+										for each  data in getContacts.get("data")
+										{
+											contactlist.add(data.get("Email"));
+										}
+										input.Contacts:ui.add(contactlist);
+						)
+					}
+				}
+
+			}
+			showContacts as "showContacts"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on user input of Contacts
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getContact_Detail = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Contacts/search?email=" + input.Contacts
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										contactData = getContact_Detail.get("data");
+										info contactData;
+										input.Contact_Details = contactData.get(0).get("Owner").get("name") + " " + contactData.get(0).get("Phone") + " " + contactData.get(0).get("Department") + " " + contactData.get(0).get("Description");
+						)
+					}
+				}
+
+			}
+			fetchAccounts as "fetchAccounts"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getAccounts = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Accounts?fields=id,Account_Name,Email,Phone"
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										accountlist = List();
+										for each  data in getAccounts.get("data")
+										{
+											accountlist.add(data.get("Account_Name"));
+										}
+										input.Accounts:ui.add(accountlist);
+						)
+					}
+				}
+
+			}
+			showAccounts as "showAccounts"
+			{
+				type =  form
+				form = Fetch_Partners
+				record event = on add or edit
+
+				on user input of Accounts
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											getAccount_Detail = invokeurl
+										[
+											url :"https://www.zohoapis.in/crm/v7/Accounts/search?account_name=" + input.Accounts
+											type :GET
+											connection:"zohocrm_connection"
+										];
+										accountData = getAccount_Detail.get("data");
+										if(accountData.size() > 0)
+										{
+											info accountData;
+											input.Account_Details = accountData.get(0).get("Owner").get("name") + " " + accountData.get(0).get("Annual_Revenue") + " " + accountData.get(0).get("Phone") + " " + accountData.get(0).get("Industry") + " " + accountData.get(0).get("Description");
+										}
+										else
+										{
+											info "No account data found.";
+											input.Account_Details = "Account details not available.";
+										}
+						)
+					}
+				}
+
+			}
+			effects as "effects"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				on user input of Pay_mode
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Pay_mode == "Pending")
+										{
+											input.Pay_mode = "background-color: red; color: white;";
+										}
+										else
+										{
+											input.Pay_mode = "background-color: green; color: white;";
+										}
+						)
+					}
+				}
+
+			}
+			stocks_workflow as "stocks_workflow"
+			{
+				type =  form
+				form = Order
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											item = Inventory[ID == input.Inventory];
+										// Use the unique ID of the Inventory item for comparison
+										if(item.Stocks >= input.QTY)
+										{
+											item.Stocks=item.Stocks - input.QTY;
+											// Subtract the purchased quantity from the stock
+											input.Inventory.update(item.ID,{"Stocks":item.Stocks});
+											// Update the Inventory record
+											Status_Message = "Stock updated successfully.";
+										}
+										else
+										{
+											Status_Message = "Insufficient stock available for this item!";
+											// Display error message in a field
+										}
+						)
+					}
+				}
+
+			}
+		}
+
+		schedule
+		{
+			Schedule_wf as "Schedule_wf"
+			{
+				type =  schedule
+					status = inactive
+				start = "2025-04-01 22:52:48"
+				frequency = daily
+				time zone = "Asia/Kolkata"
+				on start
+				{
+					actions 
+					{
+					on load
+					(
+						sendmail
+										[
+											from :zoho.loginuserid
+											to :"praveenk13062@gmail.com"
+											subject :"Daily Report"
+											message :"<div>Kindly Check out the report</div>"
+											Attachments :view:All_Customers as PDF
+										]
+					)
+					}
+				}
+			}
+			VR_customer_schedule as "VR_customer_schedule"
+			{
+				type =  schedule
+					status = inactive
+				start = "2025-04-04 23:57:12"
+				frequency = daily
+				time zone = "Asia/Kolkata"
+				on start
+				{
+					actions 
+					{
+					on load
+					(
+						sendmail
+										[
+											from :zoho.loginuserid
+											to :"praveenk13062@gmail.com"
+											subject :"Report of Customers"
+											message :"<div>Daily Reports of Customers</div>"
+											Attachments :view:VR_Customers as PDF
+										]
+					)
+					}
+				}
+			}
+			Customer_report as "Customer_report"
+			{
+				type =  schedule
+				start = "2025-04-13 19:00:00"
+				frequency = daily
+				time zone = "Asia/Kolkata"
+				on start
+				{
+					actions 
+					{
+					on load
+					(
+						sendmail
+										[
+											from :zoho.loginuserid
+											to :"zohopractise@gmail.com"
+											subject :"Customer Report"
+											message :"<div>Kindly Check Out the Submitted Daily Report</div>"
+											Attachments :view:VR_Customers as PDF
+										]
+					)
+					}
+				}
+			}
+		}
+
+		approval
+		{
+			Customer_Approval as "Customer_Approval"
+			{
+				type =  approval
+				form = Customer
+				display fields = [Customer_ID,Customer_Name,Sex,Final_Cost,Pay_Options,UPI_ID2,Phone_No2]
+				on start
+				{
+				}
+				on level 1
+				{
+					on approve 
+					{
+						actions 
+						{
+							sendmail
+							(
+								from : zoho.loginuserid
+								to : approver.submitter
+								subject : "Approval Request"
+								message : "Your request has been approved."
+							)
+						}
+						actions 
+						{
+						on load
+						(
+							input.Verification = "Out-for-Delivery";
+						)
+						}
+					}
+					on reject
+					{
+
+						actions 
+						{
+							sendmail
+							(
+								from : zoho.loginuserid
+								to : approver.submitter
+								subject : "Approval Request"
+								message : "Your request has been rejected."
+							)
+						}
+						actions 
+						{
+						on load
+						(
+							input.Verification = "Not-Deliverable";
+						)
+						}
+					}
+				}
+			}
+			Approve_Delivery as "Approve_Delivery"
+			{
+				type =  approval
+				form = Customer
+				status = inactive
+				display fields = [Customer_ID,Customer_Name,Final_Cost,Delivery_Date,Delivery_Time,Verification]
+				on start
+				{
+				}
+				on level 1
+				{
+					on approve 
+					{
+						actions 
+						{
+							sendmail
+							(
+								from : "zoho.loginuserid"
+								to : approver.submitter,"zoho.loginuserid","zohopractise@gmail.com"
+								subject : "Approval Request"
+								message : "<div>Your request has been approved.<br></div>"
+							)
+						}
+						actions 
+						{
+						on load
+						(
+							input.Verification = 'Out-for-Delivery';
+						)
+						}
+					}
+					on reject
+					{
+
+						actions 
+						{
+							sendmail
+							(
+								from : "zoho.loginuserid"
+								to : approver.submitter
+								subject : "Approval Request"
+								message : "Your request has been rejected."
+							)
+						}
+						actions 
+						{
+						on load
+						(
+							input.Verification = 'Not Delivered';
+						)
+						}
+					}
+				}
+			}
+		}
+
+		blueprint
+		{
+    			newtotal as "newtotal"
+    			{
+        			type = Blueprint
+        			form = Customer
+        			start
+        			{
+            			start stage = "Amount1"
+            			chart data
+            			{
+                			from port : B
+                			to port   : T3
+                			position  : "0 0"
+                			path      : [27.849999999999994,36.84,27.849999999999994,46.84,27.849999999999994,48.42,35.675996398925776,48.42,35.675996398925776,50,35.675996398925776,60]
+            			}
+        			}
+        			stages
+        			{
+           			"Amount1"
+           			{
+               			chart data
+               			{
+                   			position : "-15.223052470852995 60"
+               			}
+           			}
+           			"Amount2"
+           			{
+               			chart data
+               			{
+                   			position : "-330 87.07272727272726"
+               			}
+           			}
+           			"Amount3"
+           			{
+               			chart data
+               			{
+                   			position : "197 123.07272727272726"
+               			}
+           			}
+        			}
+        			transitions
+        			{
+    				Membership as "Membership"
+    				{
+         				type = normal
+         				from stage = "Amount1"
+         				to stage = "Amount2"
+         				before
+         				{
+         				}
+         				during
+         				{
+            				action = update_fields
+            				workflow status = true
+            				visible fields = [Membership_Card_Code]
+         				}
+         				after
+         				{
+							actions 
+							{
+								custom deluge script
+								(
+															// Validate membership code is entered
+														if(input.Membership_Card_Code == null || input.Membership_Card_Code.trim() == "")
+														{
+															info "No Membership Card Code provided.";
+															// Just log the info, but allow the transition
+														}
+														// Apply 20% discount on Final_Cost
+														discount = input.Final_Cost * 0.20;
+														input.Final_Cost = input.Final_Cost - discount;
+								)
+							}
+         				}
+         				chart data
+         				{
+             				from port : B3
+             				to port   : T5
+             				path      : [35.675996398925776,111.60782979522162,35.675996398925776,121.60782979522162,-121.71247736564773,121.60782979522162,-121.71247736564773,77.07272727272726,-251.50158521703537,77.07272727272726,-251.50158521703537,87.07272727272726]
+        				}
+  				}
+    				Non_Membership as "Non-Membership"
+    				{
+         				type = normal
+         				from stage = "Amount1"
+         				to stage = "Amount3"
+         				before
+         				{
+         				}
+         				after
+         				{
+							actions 
+							{
+								custom deluge script
+								(
+															extra = input.Final_Cost * 0.20;
+														input.Final_Cost = input.Final_Cost + extra;
+								)
+							}
+         				}
+         				chart data
+         				{
+             				from port : R1
+             				to port   : T3
+             				path      : [86.57504526870456,85.80391489761081,96.57504526870456,85.80391489761081,247.89904886977877,85.80391489761081,247.89904886977877,99.43832108516904,247.89904886977877,113.07272727272726,247.89904886977877,123.07272727272726]
+        				}
+  				}
+        			}
+    			}
+		}
+
+
+		functions
+		{
+			Updatepayment as "Updatepayment"
+			{
+				type =  functions
+				form = Order
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						input.Pay_mode = 'Cash';
+					)
+					}
+				}
+			}
+			updateworkflow as "updateworkflow"
+			{
+				type =  functions
+				form = Inventory
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl("#Form:InventoryFeed?zc_LoadIn=dialog&Feedback_Id=" + input.ID,"same window");
+					)
+					}
+				}
+			}
+		}
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Co_Manager"
+			{
+				name = "Co_Manager"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Co_Manager Profile\n"
+				ModulePermissions
+				{
+					Order
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							All_Orders={"View","Edit"}
+						}
+					}
+					SubCategory
+					{
+						allFieldsVisible= true 
+					}
+					Category
+					{
+						allFieldsVisible= true 
+					}
+					Customer
+					{
+						allFieldsVisible= true 
+					}
+					Inventory
+					{
+						allFieldsVisible= true 
+					}
+				}
+			}
+			"User01"
+			{
+				name = "User01"
+				type = Users_Permissions
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "User01 Profile\n"
+				ModulePermissions
+				{
+					Order
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							All_Orders={"View","Edit"}
+						}
+					}
+					Category
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+					}
+					Customer
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+					}
+					InventoryFeed
+					{
+						allFieldsVisible= true 
+					}
+					SubCategory
+					{
+						allFieldsVisible= true 
+					}
+					Inventory
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+					}
+				}
+			}
+			"Public"
+			{
+				name = "Public"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Public Profile\n"
+				ModulePermissions
+				{
+					Order
+					{
+						allFieldsVisible= true 
+					}
+					Category
+					{
+						allFieldsVisible= true 
+					}
+					Customer
+					{
+						allFieldsVisible= true 
+					}
+					InventoryFeed
+					{
+						allFieldsVisible= true 
+					}
+					SubCategory
+					{
+						allFieldsVisible= true 
+					}
+					Business_Partner
+					{
+						allFieldsVisible= true 
+					}
+					Fetch_Partners
+					{
+						allFieldsVisible= true 
+					}
+					Inventory
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							Inventories_View={"View"}
+						}
+					}
+				}
+			}
+			"Client"
+			{
+				name = "Client"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:false, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Client Profile\n"
+				ModulePermissions
+				{
+					Order
+					{
+						enabled= Create,Tab 
+						allFieldsVisible= true 
+						ReportPermissions
+						{
+							All_Orders={"View"}
+						}
+					}
+					Category
+					{
+						allFieldsVisible= true 
+					}
+					Customer
+					{
+						allFieldsVisible= true 
+					}
+					InventoryFeed
+					{
+						allFieldsVisible= true 
+					}
+					SubCategory
+					{
+						allFieldsVisible= true 
+					}
+					Inventory
+					{
+						allFieldsVisible= true 
+					}
+				}
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+
+	connections
+	{
+		zohocrm_connection
+		(
+			displayname = "ZohoCRM Connection"
+			connector = zohocrm1
+			permissions = {"create_accounts_record","create_campaigns_record","create_cases_record","create_contacts_record","create_deals_record","create_invoices_record","create_leads_record","create_products_record","create_purchase_orders_record","create_quotes_record","create_sales_orders_record","create_solutions_record","create_vendors_record","fetch_accounts_record","fetch_all_accounts_records","fetch_all_campaigns_records","fetch_all_cases_records","fetch_all_contacts_records","fetch_all_deals_records","fetch_all_invoices_records","fetch_all_leads_records","fetch_all_products_records","fetch_all_purchase_orders_records","fetch_all_quotes_records","fetch_all_sales_orders_records","fetch_all_solutions_records","fetch_all_vendors_records","fetch_campaigns_record","fetch_cases_record","fetch_contacts_record","fetch_deals_record","fetch_invoices_record","fetch_leads_record","fetch_products_record","fetch_purchase_orders_record","fetch_quotes_record","fetch_sales_orders_record","fetch_solutions_record","fetch_vendors_record","list_all","search_accounts_record","search_campaigns_record","search_cases_record","search_contacts_record","search_deals_record","search_invoices_record","search_leads_record","search_products_record","search_purchase_orders_record","search_quotes_record","search_sales_orders_record","search_solutions_record","search_vendors_record","sync_accounts_record","sync_campaigns_record","sync_cases_record","sync_contacts_record","sync_deals_record","sync_invoices_record","sync_leads_record","sync_products_record","sync_purchase_orders_record","sync_quotes_record","sync_sales_orders_record","sync_solutions_record","sync_vendors_record","update_accounts_record","update_campaigns_record","update_cases_record","update_contacts_record","update_deals_record","update_invoices_record","update_leads_record","update_products_record","update_purchase_orders_record","update_quotes_record","update_sales_orders_record","update_solutions_record","update_vendors_record"}
+		)
+	}
+	web
+	{
+		forms
+		{
+			form Business_Partner
+			{
+				label placement = left
+			}
+			form Category
+			{
+				label placement = left
+			}
+			form Customer
+			{
+				label placement = left
+			}
+			form Fetch_Partners
+			{
+				label placement = left
+			}
+			form Inventory
+			{
+				label placement = left
+			}
+			form InventoryFeed
+			{
+				label placement = left
+			}
+			form Order
+			{
+				label placement = left
+			}
+			form SubCategory
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Categories
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Category_name
+								Category_ID
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Category_name
+								Category_ID
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Subcategories
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Category
+								Sub_Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Category
+								Sub_Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Inventories
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Category_Name
+								SubCategory_Name
+								ItemName
+								ItemPrice
+								Remarks
+								"Update_feedback"
+								Image
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+							layout type = -2
+		     				title = "Overview"
+							fields
+							(
+								Category_Name
+								SubCategory_Name
+								ItemName
+								ItemPrice
+								Remarks
+								Image
+								Stocks
+							)
+						)
+						datablock2
+						(
+							layout type = -2
+		     				title = "Category_Name"
+		     				related field = Category_Name
+							fields
+							(
+								Category_name
+								Category_ID
+							)
+						)
+						datablock3
+						(
+							layout type = -2
+		     				title = "SubCategory_Name"
+		     				related field = SubCategory_Name
+							fields
+							(
+								Category
+								Sub_Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Orders
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								OrderID
+								Category
+								SubCategory
+								Inventory
+								QTY
+								Total
+								Price
+								Pay_mode
+								"Update"
+								Account_Number
+								Account_Holder_Name
+								UPI_ID
+								Phone_no
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Category
+								SubCategory
+								Inventory
+								QTY
+								Total
+								Price
+								Pay_mode
+								Account_Number
+								Account_Holder_Name
+								UPI_ID
+								Phone_no
+								Auto_Number as "Auto Number"
+								OrderID
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Customers
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Customer_ID
+								Customer_Name
+								Final_Cost
+								Verification as "Delivery_Status"
+								Delivery_Date
+								Delivery_Time
+								Sex
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+							layout type = -2
+		     				title = "Overview"
+							fields
+							(
+								Customer_Name
+								Final_Cost
+							)
+						)
+						datablock2
+						(
+							layout type = -1
+		     				title = "SubForm"
+		     				related field = Order
+							fields
+							(
+								Category
+								SubCategory
+								Inventory
+								Price
+								QTY
+								Total
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report VR_Customers
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 6
+						datablock1
+						(
+							layout type = 23
+							fields
+							(
+								Customer_Image
+								Customer_ID
+								Phone_Number as "Phone"
+								Customer_Name
+								Sex
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+							layout type = -2
+		     				title = "Overview"
+							fields
+							(
+								Customer_Name
+								Final_Cost
+							)
+						)
+						datablock2
+						(
+							layout type = -1
+		     				title = "SubForm"
+		     				related field = Order
+							fields
+							(
+								Category
+								SubCategory
+								Inventory
+								Price
+								QTY
+								Total
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Business_Partner_Report
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Full_Name as "Full Name"
+								Email
+								Company
+								Phone_Number as "Phone"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Full_Name as "Full Name"
+								Email
+								Company
+								Phone_Number as "Phone"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Fetch_Partners_Report
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Current_Partners as "Current Partners Leads"
+								Partner_Details as "Partner Details"
+								Sentiment
+								Keyword
+								Contacts
+								Contact_Details as "Contact Details"
+								Accounts
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+							layout type = -2
+		     				title = "Overview"
+							fields
+							(
+								Current_Partners as "Current Partners Leads"
+								Partner_Details as "Partner Details"
+								Sentiment
+								Keyword
+								Contacts
+								Contact_Details as "Contact Details"
+								Accounts
+								Account_Details as "Account Details"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Inventories_View
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = Custom
+		 				selectedlayout = "Custom Layout 1"
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 2
+						datablock1
+						(
+							layout type = -2
+		     				title = "Overview"
+							fields
+							(
+								Category_Name
+								SubCategory_Name
+								ItemName
+								ItemPrice
+								Remarks
+								Image
+							)
+						)
+						datablock2
+						(
+							layout type = -2
+		     				title = "Category_Name"
+		     				related field = Category_Name
+							fields
+							(
+								Category_name
+								Category_ID
+							)
+						)
+						datablock3
+						(
+							layout type = -2
+		     				title = "SubCategory_Name"
+		     				related field = SubCategory_Name
+							fields
+							(
+								Category
+								Sub_Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report stocksAnalysis
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								ItemName
+								Stocks
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Category_Name
+								SubCategory_Name
+								ItemName
+								Image
+								Stocks
+								ItemPrice
+								Remarks
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Visual_Orders
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = 3
+						datablock1
+						(
+							layout type = 7
+							fields
+							(
+								Inventory.Image as "Image"
+								OrderID
+								QTY
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Category
+								SubCategory
+								Inventory
+								QTY
+								Total
+								Price
+								Pay_mode
+								Account_Number
+								Account_Holder_Name
+								UPI_ID
+								Phone_no
+								Auto_Number as "Auto Number"
+								OrderID
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+		}
+		menu
+		{
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Categories
+				{
+					displayname = "Categories"
+					icon = "design-2-selection"
+					form  Category
+					{
+						icon = "education-school"
+					}
+					report All_Categories
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Connection"
+						icon = "tech-2-connection"
+					}
+				}
+				section Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+				section Subcategories
+				{
+					displayname = "Subcategories"
+					icon = "tech-desktop"
+					form  SubCategory
+					{
+						icon = "tech-desktop"
+					}
+					report All_Subcategories
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Inventories
+				{
+					displayname = "Inventories"
+					icon = "shopping-stock"
+					form  Inventory
+					{
+						icon = "shopping-stock"
+					}
+					report All_Inventories
+					{
+						icon = "tech-desktop"
+					}
+					report Inventories_View
+					{
+						icon = "shopping-stock"
+					}
+					report stocksAnalysis
+					{
+						icon = "shopping-stock"
+					}
+				}
+				section Orders
+				{
+					displayname = "Orders"
+					icon = "shopping-list"
+					form  Order
+					{
+						icon = "shopping-delivery-fast"
+					}
+					report All_Orders
+					{
+						icon = "tech-desktop"
+					}
+					report Visual_Orders
+					{
+						icon = "shopping-delivery-fast"
+					}
+				}
+				section Customers
+				{
+					displayname = "Customers"
+					icon = "shopping-mobile-card"
+					form  Customer
+					{
+						icon = "business-business-contact-89"
+					}
+					report All_Customers
+					{
+						icon = "tech-desktop"
+					}
+					report VR_Customers
+					{
+						icon = "business-business-contact-89"
+					}
+				}
+				section Dashboard
+				{
+					displayname = "Dashboard"
+					icon = "ui-1-dashboard-half"
+					page Dashboard
+					{
+						icon = "ui-1-dashboard-half"
+					}
+					page Dashboard2
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section InventoryFeed
+				{
+					displayname = "InventoryFeed"
+					icon = "tech-desktop"
+					form  InventoryFeed
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Business_Partner
+				{
+					displayname = "Business_Partner"
+					icon = "tech-desktop"
+					form  Business_Partner
+					{
+						icon = "tech-desktop"
+					}
+					report Business_Partner_Report
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Fetch_Partners
+				{
+					displayname = "Fetch_Partners"
+					icon = "tech-desktop"
+					form  Fetch_Partners
+					{
+						icon = "tech-desktop"
+					}
+					report Fetch_Partners_Report
+					{
+						icon = "tech-desktop"
+					}
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+				}
+			}
+		}
+		customize
+		{
+			new theme = 5
+			font = "lato"
+			color options
+			{
+				color = blue
+			}
+			logo
+			{
+				preference = "app_icon"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		forms
+		{
+			form Business_Partner
+			{
+				label placement = auto
+			}
+			form Category
+			{
+				label placement = auto
+			}
+			form Customer
+			{
+				label placement = auto
+			}
+			form Fetch_Partners
+			{
+				label placement = auto
+			}
+			form Inventory
+			{
+				label placement = auto
+			}
+			form InventoryFeed
+			{
+				label placement = auto
+			}
+			form Order
+			{
+				label placement = auto
+			}
+			form SubCategory
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = lightred
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		forms
+		{
+			form Business_Partner
+			{
+				label placement = auto
+			}
+			form Category
+			{
+				label placement = auto
+			}
+			form Customer
+			{
+				label placement = auto
+			}
+			form Fetch_Partners
+			{
+				label placement = auto
+			}
+			form Inventory
+			{
+				label placement = auto
+			}
+			form InventoryFeed
+			{
+				label placement = auto
+			}
+			form Order
+			{
+				label placement = auto
+			}
+			form SubCategory
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = lightred
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
